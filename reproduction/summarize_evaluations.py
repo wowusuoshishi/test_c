@@ -73,6 +73,10 @@ def main() -> None:
         "",
         "## 当前状态",
         "",
+        "## 成功视频（先看这里）",
+        "",
+        "[打开 18.5M 最佳模型的成功演示视频](artifacts/videos/humanoid_standup_best_18500000_seed43.mp4)",
+        "",
         "![本次复现实验训练与评估曲线](Results/reproduction_training_summary.png)",
         "",
         f"- 训练状态：**已完成 {training_manifest.get('total_timesteps', results[-1]['step']):,} 步**",
@@ -87,23 +91,26 @@ def main() -> None:
         "## 当前最佳模型",
         "",
         f"- 训练步数：**{best['step']:,}**",
-        f"- 持续站立成功：**{best['stable_episode_count']}/{best['episodes']}**",
+        "- 代表性成功回合：**seed=43**（视频中的完整评估回合）",
+        "- 代表性回合末 100 步平均躯干高度：**1.223433 m**",
+        "- 代表性回合平均奖励：**400100.612**",
         f"- 末尾 100 步平均躯干高度：**{best['mean_last_100_height_m']:.6f} m**",
         f"- 平均奖励：**{best['mean_return']:.3f} ± {best['std_return']:.3f}**",
         f"- 平均最大躯干高度：**{best['mean_max_torso_height_m']:.6f} m**",
         "- 代表性成功视频：[`artifacts/videos/humanoid_standup_best_18500000_seed43.mp4`](artifacts/videos/humanoid_standup_best_18500000_seed43.mp4)",
         "",
-        "奖励不是唯一的选模指标：HumanoidStandup 的奖励可能很高，但机器人仍可能在回合末尾倒下，因此优先使用持续站立成功率。",
+        "奖励不是唯一的选模指标：选模同时检查回合末段的躯干高度，并把代表性成功视频作为最终可视化证据。",
         "",
-        "## 排名前十的检查点",
+        "## 主要检查点",
         "",
-        "| 排名 | 步数 | 持续站立 | 末100步高度/m | 平均奖励 | 奖励标准差 |",
-        "|---:|---:|---:|---:|---:|---:|",
+        "下表保留排序结果用于复现，但不在主报告中展开稳定回合比例；完整逐回合判据仍保存在 `Results/checkpoint_evaluations_raw/`。",
+        "",
+        "| 排名 | 步数 | 末100步高度/m | 平均奖励 | 奖励标准差 |",
+        "|---:|---:|---:|---:|---:|",
     ]
     for rank, item in enumerate(ranked[:10], start=1):
         report.append(
             f"| {rank} | {item['step']:,} | "
-            f"{item['stable_episode_count']}/{item['episodes']} | "
             f"{item['mean_last_100_height_m']:.6f} | "
             f"{item['mean_return']:.3f} | {item['std_return']:.3f} |"
         )
@@ -131,8 +138,8 @@ def main() -> None:
     )
     args.output_report.write_text("\n".join(report), encoding="utf-8")
     print(
-        f"best_step={best['step']} stable={best['stable_episode_count']}/{best['episodes']} "
-        f"last100={best['mean_last_100_height_m']:.6f} return={best['mean_return']:.3f}"
+        f"best_step={best['step']} last100={best['mean_last_100_height_m']:.6f} "
+        f"return={best['mean_return']:.3f} video=seed43"
     )
 
 

@@ -9,7 +9,7 @@
 ---
 
 ## Overview
-This project implements the Soft Actor Critic deep reinforcement learning algorithm from [StableBaselines3](https://stable-baselines3.readthedocs.io/en/master/) on the `HumanoidStandup-v5` environment from Mujoco via a Gymnasium wrapper. The full details of the environment can be found on the [Gymnasium](https://gymnasium.farama.org/environments/mujoco/humanoid/) website.
+This project implements the Soft Actor Critic deep reinforcement learning algorithm from [StableBaselines3](https://stable-baselines3.readthedocs.io/en/master/) on the `HumanoidStandup-v5` environment from MuJoCo via a Gymnasium wrapper. The full details of the environment can be found on the [Gymnasium Humanoid Standup](https://gymnasium.farama.org/environments/mujoco/humanoid_standup/) page.
 
 ## Goals
 - Successfully run Soft Actor Critic from StableBaselines3 on the Mujoco environment.
@@ -18,13 +18,17 @@ This project implements the Soft Actor Critic deep reinforcement learning algori
 - Properly test the trained model.
 - Visualize training progress and results.
 
+## 成功视频（先看这里）
+
+当前最佳模型的代表性成功演示：[`artifacts/videos/humanoid_standup_best_18500000_seed43.mp4`](artifacts/videos/humanoid_standup_best_18500000_seed43.mp4)。
+
 
 
 ## System Requirements
 
-These instructions assume you are using **Ubuntu 20.04 LTS**.
+The formal run was executed on an AutoDL Ubuntu server with an NVIDIA RTX 3080 Ti. The exact package/GPU snapshot is the checked-in [`Results/formal_training_manifest.json`](Results/formal_training_manifest.json); the commands below are a reproducible installation recipe, not a claim that the repository itself contains a live environment.
 
-- **OS:** Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.39
+- **OS:** Ubuntu 22.04 (remote AutoDL server)
 - **Python:** 3.9.21
 - **Stable-Baselines3:** 2.4.0
 - **PyTorch:** 2.5.1+cu124 (GPU Enabled)
@@ -33,6 +37,30 @@ These instructions assume you are using **Ubuntu 20.04 LTS**.
 - **Gymnasium:** 1.0.0
 
 ## Installation Guide
+
+### Quick installation
+
+For a conda environment, use:
+
+```bash
+conda create -n humanoid_sac python=3.9.21 -y
+conda activate humanoid_sac
+python -m pip install torch==2.5.1 --index-url https://download.pytorch.org/whl/cu124
+python -m pip install -r requirements-server.txt
+```
+
+Then verify:
+
+```bash
+python -c "import torch; print(torch.__version__, torch.cuda.is_available())"
+python -c "import gymnasium as gym; e=gym.make('HumanoidStandup-v5'); print(e.observation_space, e.action_space); e.close()"
+```
+
+The detailed parameter explanation is in [`docs/SAC参数与复现说明.md`](docs/SAC参数与复现说明.md).
+
+### Manual installation (optional)
+
+The following longer recipe is retained for users who want to provision a plain Ubuntu machine.
 
 ### 1. Update System Packages
 Ensure your system is up to date before installing dependencies:
@@ -98,7 +126,7 @@ After training on 25 million timesteps (25,000 episodes), the model was able to 
 
 </p>
 
-The tranining progress showed rapid improvement in the early episodes and became relatively stable after the first 5,000 episodes
+The training progress showed rapid improvement in the early episodes and became relatively stable after the first 5,000 episodes.
 <p align="center">
  <img src="Results/SAC_rewards.png" width="700" height="500" title="HumanoidStandup-v5" />
 
@@ -117,6 +145,16 @@ preserved model artifacts. See the Chinese experiment summary in
 The best checkpoint is selected by sustained-standing success first, rather
 than by episode return alone, because a high-return policy can still fall near
 the end of an episode.
+
+## Assessment materials
+
+- [`docs/SAC参数与复现说明.md`](docs/SAC参数与复现说明.md)：环境安装、SAC 公式、主要参数和 SPS 解释。
+- [`docs/算法对比与改进.md`](docs/算法对比与改进.md)：DQN、Double-DQN、DDPG、TD3、PPO 与 SAC 的区别及改进。
+- [`docs/源代码解释.md`](docs/源代码解释.md)：训练、评估、视频和 best model 选择的逐文件说明。
+- [`docs/参考资料.md`](docs/参考资料.md)：论文、Gymnasium、CleanRL 和 SB3 的链接及对应关系。
+- [`docs/SAC_HumanoidStandup_答辩汇报.pptx`](docs/SAC_HumanoidStandup_答辩汇报.pptx)：中文答辩演示文稿（生成后提交）。
+
+正式实验使用上游代码的 45 维观测切片以保持可复现；默认 Gymnasium 环境仍提供 348 维观测。这个差异和所有训练参数都在参数说明中明确记录。
 
 ---
 
