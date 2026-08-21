@@ -2,7 +2,10 @@
 
 ## 成功视频（先看这里）
 
-当前最佳模型的代表性成功演示：[`artifacts/videos/humanoid_standup_best_18500000_seed43.mp4`](artifacts/videos/humanoid_standup_best_18500000_seed43.mp4)。
+<video controls preload="metadata" width="720">
+  <source src="artifacts/videos/humanoid_standup_best_18500000_seed43.mp4" type="video/mp4" />
+  当前浏览器不支持 HTML5 视频播放。
+</video>
 
 ## Overview
 This project implements the Soft Actor Critic deep reinforcement learning algorithm from [StableBaselines3](https://stable-baselines3.readthedocs.io/en/master/) on the `HumanoidStandup-v5` environment from MuJoCo via a Gymnasium wrapper. The full details of the environment can be found on the [Gymnasium Humanoid Standup](https://gymnasium.farama.org/environments/mujoco/humanoid_standup/) page.

@@ -6,7 +6,10 @@
 
 ## 成功视频（先看这里）
 
-[打开 18.5M 最佳模型的成功演示视频](artifacts/videos/humanoid_standup_best_18500000_seed43.mp4)
+<video controls preload="metadata" width="720">
+  <source src="artifacts/videos/humanoid_standup_best_18500000_seed43.mp4" type="video/mp4" />
+  当前浏览器不支持 HTML5 视频播放。
+</video>
 
 ![本次复现实验训练与评估曲线](Results/reproduction_training_summary.png)
 
@@ -28,7 +31,7 @@
 - 末尾 100 步平均躯干高度：**1.019269 m**
 - 平均奖励：**382373.085 ± 35594.953**
 - 平均最大躯干高度：**1.249287 m**
-- 代表性成功视频：[`artifacts/videos/humanoid_standup_best_18500000_seed43.mp4`](artifacts/videos/humanoid_standup_best_18500000_seed43.mp4)
+- 代表性成功视频已在本报告顶部直接嵌入播放。
 
 奖励不是唯一的选模指标：选模同时检查回合末段的躯干高度，并把代表性成功视频作为最终可视化证据。
 
