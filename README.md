@@ -106,6 +106,20 @@ The tranining progress showed rapid improvement in the early episodes and became
 
 ---
 
+## Reproduction added for the assessment
+
+This checkout includes a reproducible 25-million-step seed-42 run, periodic
+five-seed deterministic evaluation, automatic best-checkpoint selection, and
+preserved model artifacts. See the Chinese experiment summary in
+[`EXPERIMENT_REPORT.md`](EXPERIMENT_REPORT.md) and the exact execution notes in
+[`reproduction/REPRODUCTION_NOTES.md`](reproduction/REPRODUCTION_NOTES.md).
+
+The best checkpoint is selected by sustained-standing success first, rather
+than by episode return alone, because a high-return policy can still fall near
+the end of an episode.
+
+---
+
 ## License
 
 This project is released under the **MIT License**. See [LICENSE](LICENSE) for details.

@@ -1,0 +1,7 @@
+__pycache__/
+*.py[cod]
+reproduction_outputs/
+evaluation_*/
+*.pkl
+*.tfevents.*
+DEEPSEEK_HANDOFF.md
