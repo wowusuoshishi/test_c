@@ -1,12 +1,8 @@
 # SACMujoco_HumanoidStandup-v5
 
-<p align="center">
- <img src="Gallery/humanoid_standup.gif" width="350" height="250" title="HumanoidStandup-v5" />
-  <img src="Gallery/humanoid.png" width="350" height="250" title="HumanoidStanup-v5 joints" />
+## 成功视频（先看这里）
 
-</p>
-
----
+当前最佳模型的代表性成功演示：[`artifacts/videos/humanoid_standup_best_18500000_seed43.mp4`](artifacts/videos/humanoid_standup_best_18500000_seed43.mp4)。
 
 ## Overview
 This project implements the Soft Actor Critic deep reinforcement learning algorithm from [StableBaselines3](https://stable-baselines3.readthedocs.io/en/master/) on the `HumanoidStandup-v5` environment from MuJoCo via a Gymnasium wrapper. The full details of the environment can be found on the [Gymnasium Humanoid Standup](https://gymnasium.farama.org/environments/mujoco/humanoid_standup/) page.
@@ -17,12 +13,6 @@ This project implements the Soft Actor Critic deep reinforcement learning algori
 - Tune hyperparameters to optimize rewards during training.
 - Properly test the trained model.
 - Visualize training progress and results.
-
-## 成功视频（先看这里）
-
-当前最佳模型的代表性成功演示：[`artifacts/videos/humanoid_standup_best_18500000_seed43.mp4`](artifacts/videos/humanoid_standup_best_18500000_seed43.mp4)。
-
-
 
 ## System Requirements
 
