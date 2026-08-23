@@ -1,0 +1,70 @@
+{
+  "checkpoint": "/root/autodl-tmp/SACMujoco_HumanoidStandup-v5/reproduction_outputs/formal_seed42/checkpoints/sac_humanoid_sac_2000000_steps.zip",
+  "step": 2000000,
+  "episodes": 5,
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "deterministic": true,
+  "stable_episode_count": 0,
+  "mean_last_100_height_m": 0.6611776019285729,
+  "mean_return": 229986.6732683761,
+  "std_return": 63973.47665738057,
+  "mean_max_torso_height_m": 1.2825838881237221,
+  "episode_results": [
+    {
+      "seed": 42,
+      "steps": 1000,
+      "return": 109424.09878593794,
+      "max_torso_height_m": 1.3116398527271746,
+      "final_torso_height_m": 0.1262741638739655,
+      "mean_last_100_height_m": 0.12627416014764944,
+      "fraction_last_200_above_1_2m": 0.0,
+      "fraction_episode_above_1_2m": 0.032
+    },
+    {
+      "seed": 43,
+      "steps": 1000,
+      "return": 271034.6675167121,
+      "max_torso_height_m": 1.2791720444394856,
+      "final_torso_height_m": 0.8023445755298753,
+      "mean_last_100_height_m": 0.8004954691957793,
+      "fraction_last_200_above_1_2m": 0.0,
+      "fraction_episode_above_1_2m": 0.027
+    },
+    {
+      "seed": 44,
+      "steps": 1000,
+      "return": 274153.0189641413,
+      "max_torso_height_m": 1.2880458499931822,
+      "final_torso_height_m": 0.8058864593328954,
+      "mean_last_100_height_m": 0.8059620584441588,
+      "fraction_last_200_above_1_2m": 0.0,
+      "fraction_episode_above_1_2m": 0.024
+    },
+    {
+      "seed": 45,
+      "steps": 1000,
+      "return": 218787.4339097577,
+      "max_torso_height_m": 1.2509747043795045,
+      "final_torso_height_m": 0.7653252097756061,
+      "mean_last_100_height_m": 0.7654059211862985,
+      "fraction_last_200_above_1_2m": 0.0,
+      "fraction_episode_above_1_2m": 0.015
+    },
+    {
+      "seed": 46,
+      "steps": 1000,
+      "return": 276534.14716533147,
+      "max_torso_height_m": 1.2830869890792633,
+      "final_torso_height_m": 0.8072705319688388,
+      "mean_last_100_height_m": 0.8077504006689782,
+      "fraction_last_200_above_1_2m": 0.0,
+      "fraction_episode_above_1_2m": 0.027
+    }
+  ]
+}

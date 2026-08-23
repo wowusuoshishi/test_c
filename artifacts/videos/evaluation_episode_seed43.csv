@@ -1,0 +1,2 @@
+seed,steps,return,max_torso_height_m,final_torso_height_m,mean_last_100_height_m,fraction_last_200_above_1_2m,fraction_episode_above_1_2m
+43,1000,400100.6124724959,1.250222987177083,1.2159104039372297,1.2234333851232122,1.0,0.92

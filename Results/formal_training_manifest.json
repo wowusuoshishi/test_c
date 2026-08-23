@@ -1,0 +1,31 @@
+{
+  "started_at_utc": "2026-08-16T16:06:14.993952+00:00",
+  "upstream_commit": "84f8a6443af0c8f476b0e591869473da44d2583a",
+  "python": "3.9.21",
+  "gymnasium": "1.0.0",
+  "mujoco": "3.2.7",
+  "stable_baselines3": "2.4.0",
+  "torch": "2.5.1+cu124",
+  "cuda_available": true,
+  "gpu": "NVIDIA GeForce RTX 3080 Ti",
+  "seed": 42,
+  "total_timesteps": 25000000,
+  "checkpoint_freq": 500000,
+  "environment": "HumanoidStandup-v5",
+  "observation_slice": "[:45]",
+  "hyperparameters": {
+    "learning_rate": 0.0003,
+    "buffer_size": 1000000,
+    "learning_starts": 10000,
+    "batch_size": 256,
+    "train_freq": 1,
+    "gamma": 0.99,
+    "tau": 0.005,
+    "ent_coef": "auto",
+    "gradient_steps": 1,
+    "target_update_interval": 1,
+    "sde_sample_freq": -1,
+    "target_entropy": -17,
+    "use_sde_at_warmup": false
+  }
+}

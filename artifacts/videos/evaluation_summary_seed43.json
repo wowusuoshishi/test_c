@@ -1,0 +1,12 @@
+{
+  "checkpoint": "/root/autodl-tmp/SACMujoco_HumanoidStandup-v5/reproduction_outputs/formal_seed42/checkpoints/sac_humanoid_sac_18500000_steps.zip",
+  "episodes": 1,
+  "deterministic": true,
+  "mean_return": 400100.6124724959,
+  "std_return": 0.0,
+  "mean_max_torso_height_m": 1.250222987177083,
+  "mean_last_100_height_m": 1.2234333851232122,
+  "episodes_sustained_above_1_2m_last_200": 1,
+  "metrics_csv": "/root/autodl-tmp/SACMujoco_HumanoidStandup-v5/reproduction_outputs/formal_seed42/evaluation_18500000_seed43/evaluation_episodes.csv",
+  "video": "/root/autodl-tmp/SACMujoco_HumanoidStandup-v5/reproduction_outputs/formal_seed42/evaluation_18500000_seed43/humanoid_standup_18500000_steps_seed43.mp4"
+}
